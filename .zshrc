@@ -117,5 +117,3 @@ alias lc='colorls -A'
 
 eval "$(hub alias -s)"
 if [ -e /Users/spencerplant/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/spencerplant/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
-
-RPROMPT="[%D{%y/%m/%f}|%@]"
