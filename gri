@@ -1,0 +1,12 @@
+#!/bin/bash
+
+# Interactive rebase tool to rebase all the commits of the current branch against `main`
+# Alter `^main` to whichever branch you want to rebase on
+# Run these commands to enable:
+
+# cp gri /usr/local/bin/
+# chmod +x /usr/local/bin/gri
+# source ~/.zshrc
+
+count=$(git rev-list --count HEAD ^main)
+git rebase -i HEAD~$count
