@@ -1,0 +1,104 @@
+{
+    "terminal.integrated.automationShell.osx": "/bin/zsh",
+    "terminal.external.osxExec": "iTerm.app",
+    "terminal.integrated.fontFamily": "Droid Sans Mono Dotted for Powerline",
+    "files.autoSave": "afterDelay",
+    "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
+    
+    "workbench.iconTheme": "material-icon-theme",
+    "workbench.colorTheme": "Default Light+",
+    "workbench.colorCustomizations": {
+        "[Darcula]": {
+            "sideBar.background": "#3b3d3e",
+            "sideBar.border": "#303030",
+            "tab.border": "#303030",
+            "titleBar.border": "#303030",
+            "contrastBorder": "#303030",
+            "editor.background": "#292929",
+            "tab.activeBackground": "#505050",
+            "tab.inactiveBackground": "#3a3c3d",
+            "tab.activeBorder": "#2b7ae0",
+            "tab.unfocusedActiveBorder": "#8d8d8d",
+            "editorGroupHeader.tabsBackground": "#3a3c3d",
+            "editorGroupHeader.tabsBorder": "#303030",
+            "statusBar.border": "#303030",
+            "statusBar.background": "#3a3c3dff",
+            "tab.activeForeground": "#c9c9c9",
+            "tab.inactiveForeground": "#c9c9c9",
+            "scrollbarSlider.background": "#3b3d3e",
+            "scrollbar.shadow": "#2f2f2f",
+            // "scrollbarSlider.activeBackground": "#ff0000",
+            "scrollbarSlider.hoverBackground": "#3a3c3d",
+        }
+    },
+
+    "editorRuler.foreground": "#3b3d3e",
+
+    "terminal.integrated.fontSize": 11,
+    "terminal.integrated.minimumContrastRatio": 2.2,
+    "sorbet.enabled": true,
+    "ruby.useLanguageServer": true,
+    "ruby.useBundler": true,
+    "ruby.intellisense": "rubyLocate",
+    "ruby.format": "rubocop",
+    "ruby.codeCompletion": "rcodetools",
+    "[ruby]": {
+        "editor.formatOnSave": true,
+        "files.trimTrailingWhitespace": true,
+        "editor.defaultFormatter": "rebornix.ruby",
+        "editor.detectIndentation": false,
+        "editor.tabSize": 2,
+        "editor.insertSpaces": true,
+    },
+    "ruby.lint": {
+        "rubocop": {
+            "useBundler": true
+        },
+    },
+    "ruby.lintDebounceTime": 500,
+
+    "editor.formatOnSave": true,
+    "editor.formatOnSaveTimeout": 1500,
+    "editor.defaultFormatter": "rebornix.ruby",
+    "editor.scrollBeyondLastLine": false,
+    "editor.rulers": [120],
+    "debug.internalConsoleOptions": "neverOpen",
+
+    "liveshare.authenticationProvider": "GitHub",
+    "activitusbar.views": [
+        {
+            "name": "explorer",
+            "codicon": "files"
+        },
+        {
+            "name": "search",
+            "codicon": "search"
+        },
+        {
+            "name": "scm",
+            "codicon": "source-control"
+        },
+        {
+            "name": "extensions",
+            "codicon": "extensions"
+        },
+        {
+            "name": "extension.liveshare",
+            "codicon": "live-share",
+        },
+        {
+            "name": "terminal",
+            "codicon": "terminal-view-icon",
+        },
+        {
+            "name": "extension.sqltoolsActivityBarContainer",
+            "codicon": "database",
+        }
+        // Get the `name` of an extension by looking at the extension page > Feature Contributions > View Containers, and grab the id. "extension.<id>"
+    ],
+    "sqltools.defaultOpenType": "csv",
+    "sqltools.results": {
+        "location": "current"
+    },
+    "workbench.activityBar.visible": false
+}
