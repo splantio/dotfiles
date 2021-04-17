@@ -5,7 +5,6 @@
 # Run these commands to enable:
 
 # cp gri /usr/local/bin/
-# chmod +x /usr/local/bin/gri
 # source ~/.zshrc
 
 count=$(git rev-list --count HEAD ^main)
