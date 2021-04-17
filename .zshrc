@@ -112,8 +112,3 @@ alias finder="open ."
 alias gpf="git push --force-with-lease"
 alias gb="git branch | grep \* | cut -d ' ' -f2 | pbcopy"
 alias lc='colorls -A'
-
-[ -f /opt/dev/dev.sh ] && source /opt/dev/dev.sh
-
-eval "$(hub alias -s)"
-if [ -e /Users/spencerplant/.nix-profile/etc/profile.d/nix.sh ]; then . /Users/spencerplant/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
