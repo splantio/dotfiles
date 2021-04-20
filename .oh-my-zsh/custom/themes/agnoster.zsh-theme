@@ -34,9 +34,19 @@
 
 CURRENT_BG='NONE'
 
-case ${SOLARIZED_THEME:-dark} in
-    light) CURRENT_FG='white';;
-    *)     CURRENT_FG='black';;
+# case ${SOLARIZED_THEME:-dark} in
+#     light) CURRENT_FG='white';;
+#     *)     CURRENT_FG='white';;
+# esac
+
+local MAC_THEME=$(defaults read NSGlobalDomain AppleInterfaceStyle 2>&1)
+
+case $MAC_THEME in
+    Dark) CURRENT_FG='black';;
+    *) 
+      CURRENT_FG='white'
+      MAC_THEME="Light"
+      ;;
 esac
 
 # Special Powerline characters
@@ -123,7 +133,11 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  prompt_segment black default "🌿"
+  if [[ $MAC_THEME == 'Dark' ]]; then
+    prompt_segment black default "🌿"
+  else
+    prompt_segment white default "🌿"
+  fi
   # prompt_segment $SEASONAL_COLOUR_1 default "🌿"
 }
 
@@ -145,7 +159,7 @@ prompt_git() {
     dirty=$(parse_git_dirty)
     ref=$(git symbolic-ref HEAD 2> /dev/null) || ref="➦ $(git rev-parse --short HEAD 2> /dev/null)"
     if [[ -n $dirty ]]; then
-      prompt_segment yellow black
+      prompt_segment yellow $CURRENT_FG
     else
       prompt_segment green $CURRENT_FG
     fi

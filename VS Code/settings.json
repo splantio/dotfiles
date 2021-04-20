@@ -5,9 +5,32 @@
     "files.autoSave": "afterDelay",
     "editor.fontFamily": "Roboto Mono, Menlo, Monaco, 'Courier New', monospace",
     
+    "window.autoDetectColorScheme": true,
     "workbench.iconTheme": "material-icon-theme",
+    "workbench.preferredDarkColorTheme": "Darcula",
+    "workbench.preferredLightColorTheme": "Default Light+",
     "workbench.colorTheme": "Default Light+",
     "workbench.colorCustomizations": {
+
+        // Solarized colors
+        "terminal.ansiBlue": "#268bd2", // default: "#0087ff"
+        "terminal.ansiBrightBlue": "#839496", // default: "#808080"
+        "terminal.ansiCyan": "#2aa198", // default: "#00afaf"
+        "terminal.ansiBrightCyan": "#93a1a1", // default: "#8a8a8a"
+        "terminal.ansiGreen": "#859900", // default: "#5f8700"
+        "terminal.ansiBrightGreen": "#586e75", // default: "#585858"
+        "terminal.ansiMagenta": "#d33682", // default: "#af005f"
+        "terminal.ansiBrightMagenta": "#6c71c4", // default: "#5f5faf"  
+        "terminal.ansiRed": "#dc322f", // default: "#d70000"
+        "terminal.ansiBrightRed": "#cb4b16", // default: "#d75f00"
+        "terminal.ansiYellow": "#b58900", // default: "#af8700"
+        "terminal.ansiBrightYellow": "#657b83", // default: "#626262"
+        
+        "terminal.ansiWhite": "#eee8d5", // default: "#e4e4e4"
+        "terminal.ansiBrightWhite": "#fdf6e3", // default: "#ffffd7"
+        "terminal.ansiBlack": "#073642", // default: "#262626"
+        "terminal.ansiBrightBlack": "#002b36", // default: "#1c1c1c"
+
         "[Darcula]": {
             "sideBar.background": "#3b3d3e",
             "sideBar.border": "#303030",
@@ -29,13 +52,22 @@
             "scrollbar.shadow": "#2f2f2f",
             // "scrollbarSlider.activeBackground": "#ff0000",
             "scrollbarSlider.hoverBackground": "#3a3c3d",
+        },
+
+        "[Default Light+]": {
+            "statusBar.border": "#d5d7da",
+            "statusBar.background": "#dee1e4",
+            "statusBar.foreground": "#515253",
+            "editor.foreground": "#515253",
         }
+
     },
 
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
     "editorRuler.foreground": "#3b3d3e",
 
-    "terminal.integrated.fontSize": 11,
-    "terminal.integrated.minimumContrastRatio": 2.2,
+    "terminal.integrated.fontSize": 12,
     "sorbet.enabled": true,
     "ruby.useLanguageServer": true,
     "ruby.useBundler": true,
@@ -65,6 +97,8 @@
     "debug.internalConsoleOptions": "neverOpen",
 
     "liveshare.authenticationProvider": "GitHub",
+    "activitusbar.activeColour": "editor.foreground",
+    "activitusbar.inactiveColour": "editor.foreground",
     "activitusbar.views": [
         {
             "name": "explorer",
@@ -100,5 +134,6 @@
     "sqltools.results": {
         "location": "current"
     },
-    "workbench.activityBar.visible": false
+    "workbench.activityBar.visible": false,
+    "sync.gist": ""
 }
