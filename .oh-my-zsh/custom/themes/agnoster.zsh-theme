@@ -34,20 +34,19 @@
 
 CURRENT_BG='NONE'
 
-# case ${SOLARIZED_THEME:-dark} in
-#     light) CURRENT_FG='white';;
-#     *)     CURRENT_FG='white';;
-# esac
-
-local MAC_THEME=$(defaults read NSGlobalDomain AppleInterfaceStyle 2>&1)
-
-case $MAC_THEME in
-    Dark) CURRENT_FG='black';;
+determine_mac_theme () {
+  local theme=$(defaults read NSGlobalDomain AppleInterfaceStyle 2>&1)
+  case $theme in
+    Dark)
+      CURRENT_FG='black'
+      MAC_THEME='Dark'
+      ;;
     *) 
       CURRENT_FG='white'
-      MAC_THEME="Light"
+      MAC_THEME='Light'
       ;;
-esac
+  esac
+}
 
 # Special Powerline characters
 
@@ -133,12 +132,19 @@ prompt_end() {
 
 # Context: user@hostname (who am I and where am I)
 prompt_context() {
-  if [[ $MAC_THEME == 'Dark' ]]; then
-    prompt_segment black default "🌿"
+  local username
+  if [[ $(whoami) == *"spencer"* ]]; then
+    username="🌿"
   else
-    prompt_segment white default "🌿"
+    username=$(whoami)
   fi
-  # prompt_segment $SEASONAL_COLOUR_1 default "🌿"
+
+  if [[ $MAC_THEME == 'Dark' ]]; then
+    prompt_segment black default $username
+  else
+    prompt_segment white default $username
+  fi
+  # prompt_segment $SEASONAL_COLOUR_1 default $username
 }
 
 # Git: branch/detached head, dirty status
@@ -292,6 +298,7 @@ prompt_aws() {
 
 ## Main prompt
 build_prompt() {
+  determine_mac_theme
   seasonal_colours
   RETVAL=$?
   prompt_status
