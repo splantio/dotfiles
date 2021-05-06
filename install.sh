@@ -29,5 +29,14 @@ install_gri () {
   fi
 }
 
+install_vs_code_settings () {
+  local vs_code_user_directory="$HOME/Library/Application Support/Code/User"
+  if [[ -d $vs_code_user_directory ]]; then
+    echo "Installing VS Code settings"
+    cp "$dotfiles_dir/VS Code/settings.json" $vs_code_user_directory
+  fi
+}
+
 install_oh_my_zsh
 install_gri
+install_vs_code_settings
