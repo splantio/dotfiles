@@ -37,7 +37,7 @@ CURRENT_BG='NONE'
 determine_mac_theme () {
   local theme=$(defaults read NSGlobalDomain AppleInterfaceStyle 2>&1)
   case $theme in
-    Dark)
+    Dark) 
       CURRENT_FG='black'
       MAC_THEME='Dark'
       ;;
@@ -137,6 +137,10 @@ prompt_context() {
     username="🌿"
   else
     username=$(whoami)
+  fi
+
+  if [[ -n $SPIN_WORKSPACE ]]; then
+    username="${username}@${SPIN_WORKSPACE}"
   fi
 
   if [[ $MAC_THEME == 'Dark' ]]; then
