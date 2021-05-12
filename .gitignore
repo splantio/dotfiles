@@ -1,0 +1,3 @@
+# This .gitignore is just for the dotfiles repo
+
+.DS_Store
