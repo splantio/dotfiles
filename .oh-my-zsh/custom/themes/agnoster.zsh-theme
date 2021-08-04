@@ -65,10 +65,11 @@ determine_mac_theme () {
   SEGMENT_SEPARATOR=$'\ue0b0'
 }
 
-# inspired by Adam Hollett's seasonal chevrons: 
+# adapted from Adam Hollett's seasonal chevrons: 
 # https://dev.to/admhlt/terminal-tricks-from-my-dotfiles-2moe
-seasonal_colours () {
+seasonal_chevrons () {
   local date=$(date)
+  local chevrons="❯❯❯"
 
   case $date in
     # spring
@@ -98,6 +99,9 @@ seasonal_colours () {
     *)
       ;;
   esac
+  chevrons="%F{$SEASONAL_COLOUR_1}❯%F{$SEASONAL_COLOUR_2}❯%F{$SEASONAL_COLOUR_3}❯%f"
+
+  echo -en $chevrons
 }
 
 # Begin a segment
@@ -125,6 +129,8 @@ prompt_end() {
   fi
   echo -n "%{%f%}"
   CURRENT_BG=''
+  printf "\n ";
+  seasonal_chevrons
 }
 
 ### Prompt components
@@ -303,7 +309,6 @@ prompt_aws() {
 ## Main prompt
 build_prompt() {
   determine_mac_theme
-  seasonal_colours
   RETVAL=$?
   prompt_status
   prompt_virtualenv
@@ -317,4 +322,4 @@ build_prompt() {
 }
 
 PROMPT='%{%f%b%k%}$(build_prompt) '
-RPROMPT='(%D{%d %b %Y} %@)'
+RPROMPT='%D{%d %b %Y} %@'
