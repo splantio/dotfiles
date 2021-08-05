@@ -59,6 +59,9 @@
             "statusBar.background": "#dee1e4",
             "statusBar.foreground": "#515253",
             "editor.foreground": "#515253",
+            "activityBar.background": "#dee1e4",
+            "activityBar.foreground": "#515253",
+            "activityBar.border": "#d5d7da"
         }
 
     },
@@ -66,6 +69,10 @@
     "editor.scrollbar.horizontal": "hidden",
     "editor.scrollbar.vertical": "hidden",
     "editorRuler.foreground": "#3b3d3e",
+
+    "search.exclude": {
+        "**/.dev/": true
+    },
 
     "terminal.integrated.fontSize": 12,
     "sorbet.enabled": true,
@@ -88,8 +95,6 @@
         },
     },
     "ruby.lintDebounceTime": 500,
-
-    "editor.formatOnSave": true,
     "editor.formatOnSaveTimeout": 1500,
     "editor.defaultFormatter": "rebornix.ruby",
     "editor.scrollBeyondLastLine": false,
@@ -97,43 +102,27 @@
     "debug.internalConsoleOptions": "neverOpen",
 
     "liveshare.authenticationProvider": "GitHub",
-    "activitusbar.activeColour": "editor.foreground",
-    "activitusbar.inactiveColour": "editor.foreground",
-    "activitusbar.views": [
-        {
-            "name": "explorer",
-            "codicon": "files"
-        },
-        {
-            "name": "search",
-            "codicon": "search"
-        },
-        {
-            "name": "scm",
-            "codicon": "source-control"
-        },
-        {
-            "name": "extensions",
-            "codicon": "extensions"
-        },
-        {
-            "name": "extension.liveshare",
-            "codicon": "live-share",
-        },
-        {
-            "name": "terminal",
-            "codicon": "terminal-view-icon",
-        },
-        {
-            "name": "extension.sqltoolsActivityBarContainer",
-            "codicon": "database",
-        }
-        // Get the `name` of an extension by looking at the extension page > Feature Contributions > View Containers, and grab the id. "extension.<id>"
-    ],
     "sqltools.defaultOpenType": "csv",
     "sqltools.results": {
         "location": "current"
     },
-    "workbench.activityBar.visible": false,
-    "sync.gist": ""
+    "workbench.activityBar.visible": true,
+    "sync.gist": "",
+    
+    "partialDiff.commandsOnContextMenu": {
+        "markSection1": true,
+        "markSection2AndTakeDiff": true,
+        "diffSelectionWithClipboard": true,
+        "diffVisibleEditors": true,
+        "togglePreComparisonTextNormalizationRules": true
+    },
+
+    "remote.SSH.defaultExtensions": [
+        "eamodio.gitlens",
+        "graphql.vscode-graphql",
+        "jasonlhy.hungry-delete",
+    ],
+    "workbench.settings.useSplitJSON": true,
+    "workbench.settings.editor": "json"
+    
 }
